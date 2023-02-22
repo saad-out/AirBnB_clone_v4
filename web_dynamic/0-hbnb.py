@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 """ Starts a Flash Web Application """
+<<<<<<< HEAD
+=======
+import uuid
+>>>>>>> 8f327ed7ef1401c97809b108d55a03d409b468bc
 from models import storage
 from models.state import State
 from models.city import City
@@ -7,7 +11,10 @@ from models.amenity import Amenity
 from models.place import Place
 from os import environ
 from flask import Flask, render_template
+<<<<<<< HEAD
 from uuid import uuid4
+=======
+>>>>>>> 8f327ed7ef1401c97809b108d55a03d409b468bc
 app = Flask(__name__)
 # app.jinja_env.trim_blocks = True
 # app.jinja_env.lstrip_blocks = True
@@ -19,10 +26,16 @@ def close_db(error):
     storage.close()
 
 
+<<<<<<< HEAD
 @app.route('/0-hbnb', strict_slashes=False)
 def hbnb():
     """ HBNB is alive! """
     cache_id = uuid4()
+=======
+@app.route('/0-hbnb/', strict_slashes=False)
+def hbnb():
+    """ HBNB is alive! """
+>>>>>>> 8f327ed7ef1401c97809b108d55a03d409b468bc
     states = storage.all(State).values()
     states = sorted(states, key=lambda k: k.name)
     st_ct = []
@@ -40,7 +53,11 @@ def hbnb():
                            states=st_ct,
                            amenities=amenities,
                            places=places,
+<<<<<<< HEAD
                            cache_id=cache_id)
+=======
+                           cache_id=uuid.uuid4())
+>>>>>>> 8f327ed7ef1401c97809b108d55a03d409b468bc
 
 
 if __name__ == "__main__":
