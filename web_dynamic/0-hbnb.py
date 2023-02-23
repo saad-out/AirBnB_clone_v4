@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Starts a Flash Web Application """
-import uuid
+from uuid import uuid4
 from models import storage
 from models.state import State
 from models.city import City
@@ -41,7 +41,7 @@ def hbnb():
                            states=st_ct,
                            amenities=amenities,
                            places=places,
-                           cache_id=uuid.uuid4())
+                           cache_id=uuid4())
 
 if __name__ == "__main__":
     """ Main Function """

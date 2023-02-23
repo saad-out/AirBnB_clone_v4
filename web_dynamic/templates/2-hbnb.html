@@ -10,14 +10,6 @@
     <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="../static/scripts/2-hbnb.js?{{ cache_id }}"></script>
-	<style>
-		header#api_status {
-			right: 30px;
-			background-color: #cccccc;
-			border-radius: 50%;
-			border: 40px solid black;
-		}
-	</style>
     <title>HBnB</title>
   </head>
   <body>
@@ -51,7 +43,7 @@
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
-		  <li><input type="checkbox" style="margin-right: 10px" data_id="{{ amenity.id }}" data_name="{{ amenity.name }}">{{ amenity.name }}</li>
+		  <li><input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}" />{{ amenity.name }}</li>
 	      {% endfor %}
 	    </ul>
 	  </div>
@@ -73,7 +65,7 @@
             <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
 	  </div>
 	  <div class="user">
-            <b>Owner:</b> {{ place.user.first_name }} {{ place.user.last_name }}
+            <b>Owner:</b> {{ place.user_id.first_name }} {{ place.user_id.last_name }}
           </div>
           <div class="description">
 	    {{ place.description | safe }}

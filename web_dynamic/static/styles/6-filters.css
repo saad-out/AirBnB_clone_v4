@@ -98,6 +98,10 @@ button:hover {
 }
 
 .amenities:hover .popover,
-.locations:hover .popover {
+.locatiypons:hover .popover {
     visibility: visible;
+}
+
+input[type="checkbox"] {
+	margin-right: 10px;
 }
